@@ -8,7 +8,11 @@ __pragma(push_macro("max"))
 #endif  // defined(_MSC_VER)
 #pragma once
 
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 #pragma once
 
 // #include "cxx_universal.h"
@@ -278,7 +282,11 @@ namespace sqlite_orm {
 }
 #pragma once
 
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 #include <memory>  //  std::unique_ptr/shared_ptr, std::make_unique
 #include <system_error>  //  std::system_error
 #include <string>  //  std::string
@@ -2819,7 +2827,11 @@ namespace sqlite_orm {
 
 // #include "error_code.h"
 
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 #include <system_error>  // std::error_code, std::system_error
 #include <string>  //  std::string
 #include <stdexcept>
@@ -9365,7 +9377,11 @@ namespace sqlite_orm {
 
 // #include "statement_binder.h"
 
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 #include <type_traits>  //  std::enable_if_t, std::is_arithmetic, std::is_same, std::true_type, std::false_type, std::make_index_sequence, std::index_sequence
 #include <memory>  //  std::default_delete
 #include <string>  //  std::string, std::wstring
@@ -12694,12 +12710,20 @@ namespace sqlite_orm {
 
 // #include "mapped_view.h"
 
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 #include <utility>  //  std::forward, std::move
 
 // #include "row_extractor.h"
 
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 #include <type_traits>  //  std::enable_if_t, std::is_arithmetic, std::is_same, std::enable_if
 #include <cstdlib>  //  atof, atoi, atoll
 #include <cstring>  //  strlen
@@ -13345,7 +13369,11 @@ namespace sqlite_orm {
 
 // #include "mapped_iterator.h"
 
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 #include <memory>  //  std::shared_ptr, std::make_shared
 #include <utility>  //  std::move
 #include <iterator>  //  std::input_iterator_tag
@@ -13354,7 +13382,11 @@ namespace sqlite_orm {
 
 // #include "statement_finalizer.h"
 
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 #include <memory>  // std::unique_ptr
 #include <type_traits>  // std::integral_constant
 
@@ -13371,7 +13403,11 @@ namespace sqlite_orm {
 
 // #include "object_from_column_builder.h"
 
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 #include <type_traits>  //  std::is_member_object_pointer
 #include <utility>  //  std::move
 
@@ -13462,7 +13498,11 @@ namespace sqlite_orm {
 
 // #include "util.h"
 
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 #include <string>  //  std::string
 #include <utility>  //  std::move
 
@@ -13716,7 +13756,11 @@ namespace sqlite_orm {
 
 // #include "prepared_statement.h"
 
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 #include <memory>  //  std::unique_ptr
 #include <iterator>  //  std::iterator_traits
 #include <string>  //  std::string
@@ -13731,8 +13775,11 @@ namespace sqlite_orm {
 // #include "tuple_helper/tuple_traits.h"
 
 // #include "connection_holder.h"
-
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 #include <atomic>
 #include <string>  //  std::string
 
@@ -15821,7 +15868,11 @@ inline constexpr bool std::ranges::enable_borrowed_range<sqlite_orm::internal::m
 
 // #include "result_set_view.h"
 
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 #include <utility>  //  std::move, std::remove_cvref
 #include <functional>  //  std::reference_wrapper
 #if defined(SQLITE_ORM_SENTINEL_BASED_FOR_SUPPORTED) && defined(SQLITE_ORM_DEFAULT_COMPARISONS_SUPPORTED) &&           \
@@ -15835,7 +15886,11 @@ inline constexpr bool std::ranges::enable_borrowed_range<sqlite_orm::internal::m
 
 // #include "result_set_iterator.h"
 
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 #include <utility>  //  std::move
 #include <iterator>  //  std::input_iterator_tag, std::default_sentinel_t
 #include <functional>  //  std::reference_wrapper
@@ -16001,7 +16056,11 @@ inline constexpr bool std::ranges::enable_borrowed_range<sqlite_orm::internal::r
 
 // #include "storage_base.h"
 
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 #include <cstdlib>  // atoi
 #include <memory>  //  std::allocator
 #include <functional>  //  std::function, std::bind, std::bind_front
@@ -16056,7 +16115,11 @@ namespace sqlite_orm {
 
 // #include "pragma.h"
 
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 #include <cstdlib>  // atoi
 #include <string>  //  std::string
 #include <functional>  //  std::function
@@ -16771,7 +16834,11 @@ namespace sqlite_orm {
 
 // #include "limit_accessor.h"
 
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 #include <map>  //  std::map
 #include <functional>  //  std::function
 #include <memory>  //  std::shared_ptr
@@ -16996,7 +17063,11 @@ namespace sqlite_orm {
 
 // #include "backup.h"
 
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 #include <system_error>  //  std::system_error
 #include <string>  //  std::string
 #include <memory>
@@ -17073,7 +17144,11 @@ namespace sqlite_orm {
 
 // #include "values_to_tuple.h"
 
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 #include <type_traits>  //  std::enable_if, std::is_same, std::index_sequence, std::make_index_sequence
 #include <tuple>  //  std::tuple, std::tuple_size, std::tuple_element
 
@@ -17085,7 +17160,11 @@ namespace sqlite_orm {
 
 // #include "arg_values.h"
 
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 
 // #include "row_extractor.h"
 
@@ -17271,7 +17350,11 @@ namespace sqlite_orm {
 
 // #include "udf_proxy.h"
 
+#ifndef ATINA_SERVER_USE_SELF_MANAGED_SQLITE
 #include <sqlite3.h>
+#else
+#include <sqlite/sqlite3.h>
+#endif
 #include <cassert>  //  assert macro
 #include <type_traits>  //  std::true_type, std::false_type
 #include <new>  //  std::bad_alloc
